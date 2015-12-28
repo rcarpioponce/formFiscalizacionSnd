@@ -1,0 +1,29 @@
+commit ac5de9afb2b0fc2ded8c7e12967535fd48bb92b8
+Author: RENZO R. CARPIO PONCE <me@renzocarpio.com>
+Date:   Tue Dec 22 14:52:22 2015 -0500
+
+    se agrego el archivo dist/test.html
+
+commit 8a1a11cfc5e10381f407c42f4d11bd5e439c125b
+Author: RENZO R. CARPIO PONCE <me@renzocarpio.com>
+Date:   Tue Dec 22 14:48:46 2015 -0500
+
+    prueba con init.css ya que main.css no carga bien en la carpeta dist
+
+commit 17ca5eac346ed9124929172d87ad912a876d7613
+Author: RENZO R. CARPIO PONCE <me@renzocarpio.com>
+Date:   Tue Dec 22 13:06:10 2015 -0500
+
+    se genero los archivos de la carpeta dist
+
+commit 60060ae1f5ee0b39d2912578db9d745e8e54a092
+Author: unknown <oti18@0310RCARPIO.sunedu.gob.pe>
+Date:   Tue Dec 22 12:03:04 2015 -0500
+
+    formulario de persona natural validado
+
+commit 208777f6a5322646891b7f7485d1e92a0b0637b6
+Author: unknown <oti18@0310RCARPIO.sunedu.gob.pe>
+Date:   Mon Dec 21 11:42:43 2015 -0500
+
+    commit inicial

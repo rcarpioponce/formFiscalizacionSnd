@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>SUNEDU - Formulario de Fiscalización</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="shortcut icon" href="./img/sunedu-favicon.png" />
+  <!-- smoosh -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/main.css">
+
+  <!-- endsmoosh -->
+</head>
+<body>
+    <div class="container-fluid formFiscalizacion">
+      <h1><figure><img src="./img/sunedu-favicon.png" height="32" width="32" alt="SUNEDU"></figure>SUNEDU - FORMULARIO DE FISCALIZACIÓN</h1>
+      <form id="persona_natural" action="http://localhost/suneduFiscalizacion/public/denuncias" method="POST" target="_blank">
+        <h2>DATOS DEL DENUNCIANTE (PERSONA NATURAL)</h2>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+              <label>DOCUMENTO DE IDENTIDAD</label>
+              <input type="text" class="form-control dni" name="dni" required placeholder="DNI">  
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+              <label>NOMBRES Y APELLIDOS DEL DENUNCIANTE</label>
+              <input type="text" class="form-control" name="nombre_completo" required placeholder="Nombre Completo">  
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+              <label>EMAIL</label>
+              <input type="email" class="form-control email" name="email" required placeholder="Email">    
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+              <label>TELÉFONO</label>
+              <input type="text" class="form-control telefono" name="telefono" required placeholder="Teléfono">    
+            </div>
+          </div>        
+        </div>
+        <div class="form-group">
+          <label>DOMICILIO EN EL QUE DESEA RECIBIR LAS COMUNICACIONES</label>
+          <input type="text" class="form-control domicilio_notificaciones" name="domicilio_notificaciones" required placeholder="Domicilio">    
+        </div>
+
+        <h2>DATOS DEL APODERADO/REPRESENTANTE</h2>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+              <label>DOCUMENTO DE IDENTIDAD</label>
+              <input type="text" class="form-control dni" name="dni_apoderado" placeholder="DNI" >  
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+              <label>NOMBRES Y APELLIDOS DEL DENUNCIANTE</label>
+              <input type="text" class="form-control" name="nombre_completo_apoderado" placeholder="Nombre del apoderado" >  
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+              <label>EMAIL</label>
+              <input type="email" class="form-control email" name="email_apoderado" placeholder="Email del Apoderado">    
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+              <label>TELÉFONO</label>
+              <input type="text" class="form-control telefono" name="telefono_apoderado" placeholder="Teléfono del Apoderado">    
+            </div>
+          </div>        
+        </div>
+        <div class="form-group">
+          <label>DOMICILIO</label>
+          <input type="text" class="form-control domicilio_apoderado" name="domicilio_apoderado" placeholder="Domicilio del Apoderado">    
+        </div>
+
+        <h2>DATOS DE LA INSTITUCIÓN DENUNCIADA</h2>
+        <div class="form-group">
+          <label>NOMBRE DE LA INSTITUCIÓN</label><!-- 
+          <input type="text" class="form-control" name="nombre_institucion" required placeholder="Nombre completo de la institución"> -->
+          <select class="form-control nombre_institucion" name="nombre_institucion" required></select>    
+        </div>
+        <div class="form-group">
+          <label>REPRESENTANTE</label>
+          <input type="text" class="form-control" name="representante_institucion" required placeholder="Nombre completo del representante de la institución">    
+        </div>
+        <div class="form-group">
+          <label>DOMICILIO</label>
+          <input type="text" class="form-control" name="domicilio_institucion" required placeholder="Domicilio de la institución">    
+        </div>
+        <div class="form-group">
+          <label>¿LA DENUNCIA HA SIDO PRESENTADA ANTE OTRA INSTANCIA?</label>
+          <p>Si la denuncia fue presentada en otra instancia seleccione <strong>SI</strong> en el siguiente control y luego en la sección de abajo especifique a que entidad(es) fue presentada e ingrese el número de expediente correspondiente.</p>
+          <select class="form-control otra_instancia" name="otra_instancia">
+            <option value="Si">SI</option>
+            <option value="No" selected="true">NO</option>
+          </select>              
+        </div>
+        <div class="form-group checkboxesOtraInstancia">
+            <label>HA QUE INSTANCIA(S) HA SIDO PRESENTADA</label>
+            <div class="row">
+              <div class="col-lg-6 form-group col-sm-6 col-md-6 col-sm-6">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" disabled="disabled" value="1" class="exp_congreso" id="exp_congreso" name="exp_congreso">
+                    Congreso de la república
+                  </label>               
+                </div>                
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group col-sm-6 col-md-6 col-sm-6">
+                <input type="text" class="form-control exp_congreso" name="nro_expediente_congreso" disabled="disabled" placeholder="ingrese número de Expediente">
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" disabled="disabled" value="2" id="exp_minedu" class="exp_minedu" name="exp_minedu">
+                    Ministerio de Educación
+                  </label>               
+                </div>                
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+                <input type="text" class="form-control exp_minedu" name="nro_expediente_minedu" disabled="disabled" placeholder="ingrese número de Expediente">
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" disabled="disabled" value="3" class="exp_pj" id="exp_pj"  name="exp_pj">
+                    Ministerio de Público / Poder Judicial
+                  </label>               
+                </div>                
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+                <input type="text" class="form-control exp_pj" name="nro_expediente_pj" disabled="disabled" placeholder="ingrese número de Expediente">         
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" disabled="disabled" value="4" class="exp_contraloria" id="exp_contraloria" name="exp_contraloria">
+                    Contraloría General de la república
+                  </label>               
+                </div>                
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+                <input type="text" class="form-control exp_contraloria" name="nro_expediente_contraloria" disabled="disabled" placeholder="ingrese número de Expediente">
+              </div>
+            </div> 
+
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" disabled="disabled" value="5" class="exp_indecopi" id="exp_indecopi" name="exp_indecopi">
+                    Indecopi
+                  </label>               
+                </div>                
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-group">
+                <input type="text" class="form-control exp_indecopi" name="nro_expediente_indecopi" disabled="disabled" placeholder="ingrese número de Expediente">               
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-xs-12 col-md-4 col-lg-4">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" disabled="disabled" value="6" class="exp_otro" id="exp_otro"  name="exp_otro">
+                    Otro (Especificar)
+                  </label>               
+                </div>                
+              </div>
+              <div class="form-group col-xs-12 col-md-4 col-lg-4">
+                <input type="text" class="form-control exp_otro" name="nombre_campo_otro" disabled="disabled" placeholder="ingrese el nombre">                 
+              </div>
+              <div class="form-group col-xs-12 col-md-4 col-lg-4">
+                <input type="text" class="form-control exp_otro" name="nro_expediente_otro" disabled="disabled" placeholder="ingrese número de Expediente">
+              </div>
+            </div>
+
+          </div>
+
+          <h2>DETALLES DE LA PRESUNTA INFRACCIÓN</h2>
+          <div class="form-group">          
+            <strong>INFRACCIÓN SOBRE:</strong>
+            <p>
+              <ul>
+                <li>a. Disposiciones establecidas en la Nº 30220 - Ley Universitaria o lineamientos, directivas, guías y/o normas de otro rango que establezca la SUNEDU y que sean tipificadas como infracciones en el Reglamento de infracciones y sanciones.</li>
+                <li>b. Condiciones básicas de calidad para ofrecer el servicio educativo superior universitario</li>
+                <li>c. Condiciones básicas de calidad para ofrecer el servicio educativo conducente a otorgar grados y títulos equivalentes a los otorgados por las universidades</li>
+                <li>d. Uso educativo de los recursos público y/o beneficios otorgados por el marco legal a las universidades</li>
+              </ul>
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label>DESCRIPCIÓN DE LOS HECHOS</label>
+            <textarea class="form-control" placeholder="Ingrese la descripción de los hechos" required name="descripcion_hechos"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>POTENCIALES AFECTADOS CON LOS HECHOS</label>
+            <textarea class="form-control" placeholder="Ingrese a los potenciales afectados con los hechos" required name="afectados_hechos"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>DOCUMENTOS SUSTENTATORIOS</label>
+            <textarea class="form-control" placeholder="Ingrese los documentos sustentatorios" required name="docs_sustentatorios"></textarea>
+          </div>
+          <div class="form-group">
+            <p>Constituyen documentos sustentatorios, entre otros, los impresos o fotocopiasde facsímil o fax, correos electrónicos ,escritos, cartas notariales, oficios, memorárdums, informes, resoluciones, planos, cuadros, fotografías, reproducciones de audio y video, y en general cualquier medio que recoja, contenga o represente algún hecho, actividad humana o su resultado.</p>            
+          </div>
+
+          <div class="form-group">
+            <input type="submit" value="Enviar" class="form-control btn btn-success">
+          </div>
+
+        </div>
+
+
+      </form>
+
+
+
+
+
+
+      <form class="hidden">
+        <div class="form-group">
+          <label>DENOMINACIÓN O RAZÓN SOCIAL</label>
+          <input type="text" class="form-control" name="razon_social" required>    
+        </div>
+        <div class="form-group">
+          <label>PARTIDA ELECTRÓNICA DONDE SE ENCUENTRA INSCRITA EN SUNARP</label>
+          <input type="text" class="form-control" name="partida_eletronica" required>    
+        </div>
+        <div class="form-group">
+          <label>NOMBRES Y APELLIDOS DEL APODERADO/REPRESENTANTE</label>
+          <input type="text" class="form-control" name="razon_social" required>    
+        </div>
+        <div class="form-group">
+          <label>DOCUMENTO DE IDENTIDAD</label>
+          <input type="text" class="form-control" name="dni" required>    
+        </div>
+        <div class="form-group">
+          <label>DOMICILIO</label>
+          <input type="text" class="form-control" name="domicilio" required>    
+        </div>
+        <div class="form-group">
+          <label>EMAIL</label>
+          <input type="email" class="form-control" name="email" required>    
+        </div>
+        <div class="form-group">
+          <label>TELEFONO</label>
+          <input type="text" class="form-control" name="telefono" required>    
+        </div>                        
+      </form>      
+    </div>
+  <!-- smoosh -->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+  <script src="./js/inputmask.js"></script>
+  <script src="./js/inputmask.extensions.js"></script>
+  <script src="./js/inputmask.numeric.extensions.js"></script>
+  <script src="./js/inputmask.regex.extensions.js"></script>
+  <script src="./js/inputmask.phone.extensions.js"></script>
+  <script src="./js/jquery.inputmask.js"></script>
+  <script src="./js/icheck.js"></script>
+  <script src="./js/jquery.validator.min.js"></script>
+  <!-- endsmoosh -->
+<script type="text/javascript">
+/*  $.validator.setDefaults({
+    submitHandler: function() {
+      alert("submitted!");
+    }
+  });*/
+$(document).on('ready',function(){
+
+  $("#persona_natural").validate({
+      rules: {
+          "nro_expediente_congreso": {
+            required: true,
+            minlength: {
+                param:6,
+                depends: function (element) {
+                    return $("#exp_congreso").is(":checked");
+                }
+            }
+          },
+          "nro_expediente_minedu": {
+            required: true,
+            minlength: {
+                param:6,
+                depends: function (element) {
+                    return $("#exp_minedu").is(":checked");
+                }
+            }
+          },
+          "nro_expediente_pj": {
+            required: true,
+            minlength: {
+                param:6,
+                depends: function (element) {
+                    return $("#exp_pj").is(":checked");
+                }
+            }
+          },
+          "nro_expediente_contraloria": {
+            required: true,
+            minlength: {
+                param:6,
+                depends: function (element) {
+                    return $("#exp_contraloria").is(":checked");
+                }
+            }
+          },
+          "nro_expediente_indecopi": {
+            required: true,
+            minlength: {
+                param:6,
+                depends: function (element) {
+                    return $("#exp_indecopi").is(":checked");
+                }
+            }
+          },
+          "nro_expediente_otro": {
+            required: true,
+            minlength: {
+                param:6,
+                depends: function (element) {
+                    return $("#exp_otro").is(":checked");
+                }
+            }
+          },
+          "campo_otro": {
+            required: true,
+            minlength: {
+                param:6,
+                depends: function (element) {
+                    return $("#exp_otro").is(":checked");
+                }
+            }
+          },                                        
+      },
+  });
+
+  var selectorDNI = $('input.dni');
+  Inputmask("9", { repeat: 8 }).mask(selectorDNI);
+
+  var selectorTelefono = $('input.telefono');
+  Inputmask("(999) 9{5,9}").mask(selectorTelefono);
+
+  function activarOtraInstancia(event){
+    var valor = $('.otra_instancia').val();
+    if(valor == 'Si'){
+      $('.checkboxesOtraInstancia input[type="checkbox"]').attr('disabled',false);
+    }else{
+      $('.checkboxesOtraInstancia input[type="checkbox"]').attr('disabled',true);
+    }
+  }
+
+  $('.otra_instancia').on('change',activarOtraInstancia);
+
+  function activarNumExpediente(clase){
+    var activo = $('input.'+clase+'[type="checkbox"]').is(':checked');
+    if(activo){
+      $('input.'+clase+'[type="text"]').attr('disabled',false); 
+    }else{
+      $('input.'+clase+'[type="text"]').attr('disabled',true); 
+    }
+  }
+
+    $('input.exp_congreso[type="checkbox"]').on('click',function(){
+      activarNumExpediente('exp_congreso');
+    });
+    $('input.exp_minedu[type="checkbox"]').on('click',function(){
+      activarNumExpediente('exp_minedu');
+    });
+    $('input.exp_pj[type="checkbox"]').on('click',function(){
+      activarNumExpediente('exp_pj');
+    });
+    $('input.exp_contraloria[type="checkbox"]').on('click',function(){
+      activarNumExpediente('exp_contraloria');
+    });
+    $('input.exp_indecopi[type="checkbox"]').on('click',function(){
+      activarNumExpediente('exp_indecopi');
+    }); 
+    $('input.exp_otro[type="checkbox"]').on('click',function(){
+      activarNumExpediente('exp_otro');
+    });
+
+    getDataSelect("http://localhost/suneduFiscalizacion/public/universidades",".nombre_institucion");
+
+    function getDataSelect(url,classControl){
+        var request = $.ajax({
+          url: url,
+          method: "GET",
+          dataType: "json"
+        });
+         
+        request.done(function( data ) {
+          data.forEach(function(obj,i){
+            var option = $("<option>");
+            option.val(obj.id);
+            option.append(obj.nombre);
+            $(classControl).append(option);
+          });
+        });
+         
+        request.fail(function( jqXHR, textStatus ) {
+          alert( "Request failed: " + textStatus );
+        });      
+    }                    
+});  
+</script>
+</body>
+</html>
